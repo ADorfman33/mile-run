@@ -19,7 +19,6 @@ $(function() {
     let newRunner;
   });
 
-
   // Creating sample data and adding it to table
   let $data3 = $(`
     <tr>
@@ -37,12 +36,63 @@ $(function() {
   $('#runner-data').append($data3);
 
 
+  [date, time] = normalize("9/20", "2:30");
+  let dateN = date[0] + "/" + date[1];
+  let timeN = time[0] + ":" + time[1];
+
+  let runner3 = new Runner("Jon", "Doe");
+  runner3.addTime(dateN, timeN);
+
 
 
 });
 
 function normalize(date, time) {
-  let regex = /(.*)\/(.*)/g;
+  let regexDate = /(.*)\/(.*)/g;
+  let normalizedData = [];
+  let m;
 
+  while((m = regexDate.exec(date)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if(m.index === regexDate.lastIndex) {
+        regexDate.lastIndex++;
+    }
+    let month = Number(m[1]);
+    let day = Number(m[2]);
+    if(month < 10) {
+      month = "0" + month;
+    } else {
+      month = month.toString();
+    }
+    if(day < 10) {
+      day = "0" + day;
+    } else {
+      day = day.toString();
+    }
+    normalizedData.push([month, day]);
+  }
 
+  let regexTime = /(.*):(.*)/g;
+  let n;
+
+  while((n = regexTime.exec(time)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if(n.index === regexTime.lastIndex) {
+        regexTime.lastIndex++;
+    }
+    let hour = Number(n[1]);
+    let minute = Number(n[2]);
+    if(hour < 10) {
+      hour = "0" + hour;
+    } else {
+      hour = hour.toString();
+    }
+    if(minute < 10) {
+      minute = "0" + minute;
+    } else {
+      minute = minute.toString();
+    }
+    normalizedData.push([hour, minute]);
+  }
+  return normalizedData;
 }
