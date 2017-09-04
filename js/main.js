@@ -10,7 +10,8 @@ $(function() {
   $('#header-times').append($times);
 
   // Dealing with the dates (got bored)
-  // let $dates = $('#dates');
+  let date = getDate();
+  console.log(date);
   // console.log($dates.children().length-1);
 
   // Triggering modal to add player
@@ -102,13 +103,13 @@ function getDate() {
   var dd = today.getDate();
   var mm = today.getMonth() + 1; //January is 0!
 
-  var yyyy = today.getFullYear();
-  if (dd < 10) {
-    dd = '0' + dd;
-  }
-  if (mm < 10) {
-    mm = '0' + mm;
-  }
-  var today = mm + '/' + dd + '/' + yyyy;
+  // var yyyy = today.getFullYear();
+  // if (dd < 10) {
+  //   dd = '0' + dd;
+  // }
+  // if (mm < 10) {
+  //   mm = '0' + mm;
+  // }
+  var today = mm + '/' + dd;
   return today
 }
