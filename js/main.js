@@ -113,4 +113,4 @@ function getDate() {
   }
   var today = mm + '/' + dd + '/' + yyyy;
   return today
-})
+}
