@@ -16,6 +16,9 @@ $(function() {
   $('#add-runner-btn').click(function() {
     $('#add-modal').modal('open');
   });
+  $('#floating-add').click(function() {
+    $('#add-modal').modal('open');
+  });
 
   // Saving data and
   $('#add-runner').click(function(e) {
