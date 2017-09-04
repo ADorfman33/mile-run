@@ -9,19 +9,13 @@ class Runner {
   }
 
   addTime(date, time) {
-    if(this.times[date]) {
-      this.times[date].push(time);
-    } else {
-      this.times[date] = [time];
-    }
+    this.times[date] = [time];
 
-    let $entry = $(`#${this.id}`);
+    // let $entry = $(`#${this.id}`);
 
-    for(time in this.times) {
-
-
-      $entry.append(`<td>${this.times[time]}</td>`);
-    }
+    // for(time in this.times) {
+    //   $entry.append(`<td>${this.times[time]}</td>`);
+    // }
   }
 
   parseEntry() {
@@ -33,7 +27,7 @@ class Runner {
         <td class="calc-data">6:00</td>
         <td class="calc-data">8:00</td>
         <td><i class="add-time-btn material-icons">add_circle</i></td>
-        <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label><td>
+        <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label></td>
       </tr>
     `);
 
