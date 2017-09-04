@@ -1,12 +1,23 @@
-nav{
-  position: fixed;
-}
-
-.container{
-  padding-top: 75px;
-}
 
 .add-time-btn{
   cursor: pointer;
   cursor: hand;
+}
+
+.btn-floating{
+  display:none;
+  position:fixed;
+}
+
+#floating-add{
+  bottom: 33px;
+  left: 33px;
+}
+#floating-stats{
+  bottom: 33px;
+  right: 33px;
+}
+
+p{
+  font-size: 33px;
 }

@@ -12,18 +12,25 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Mile Run</a>
-      <ul id="nav-mobile" class="left">
-        <li><a href="#add-modal" id="add-runner-btn">Add Runner</a></li>
-        <li><a href="#" id="test-btn">test Button</a></li>
-      </ul>
-      <ul id="nav-mobile" class="right">
-        <li><a href="#stats-modal" id="stats-btn">Stats/Sort</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- <div class="navbar-fixed"> -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Mile Run</a>
+        <ul id="nav-mobile" class="left">
+          <li><a href="#add-modal" id="add-runner-btn">Add Runner</a></li>
+          <li><a href="#" id="test-btn">test Button</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right">
+          <li><a href="#stats-modal" id="stats-btn">Stats/Sort</a></li>
+        </ul>
+      </div>
+    </nav>
+  <!-- </div> -->
+
+  <div>
+    <a id="floating-add" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a id="floating-stats" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">show_chart</i></a>
+  </div>
 
   <!-- Modal Structure -->
   <div id="add-modal" class="modal modal-fixed-footer">
@@ -78,8 +85,9 @@
           <td>6:00</td>
           <td>8:00</td>
           <td><i class="add-time-btn material-icons">add_circle</i></td>
-          <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label><td>
-          <!-- <td>4:50</td>
+          <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label>
+            <td>
+              <!-- <td>4:50</td>
           <td>6:00</td>
           <td>8:00</td> -->
         </tr>
@@ -90,7 +98,8 @@
           <td>6:00</td>
           <td>8:00</td>
           <td><i class="add-time-btn material-icons">add_circle</i></td>
-          <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label><td>
+          <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label>
+            <td>
         </tr>
 
       </tbody>
@@ -101,6 +110,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="./js/Runner.js"></script>
+  <script src="./js/formating.js"></script>
   <script src="./js/main.js"></script>
 
 </body>
