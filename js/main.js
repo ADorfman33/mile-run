@@ -9,7 +9,7 @@ $(function() {
 
   // Triggering modal to add player
   $('#add-runner-btn').click(function() {
-    $('#modal1').modal('open');
+    $('#add-modal').modal('open');
   });
 
   $('#add-runner').click(function(e) {
