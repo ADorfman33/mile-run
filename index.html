@@ -17,6 +17,7 @@
       <a href="#" class="brand-logo center">Mile Run</a>
       <ul id="nav-mobile" class="left">
         <li><a href="#add-modal" id="add-runner-btn">Add Runner</a></li>
+        <li><a href="#" id="test-btn">test Button</a></li>
       </ul>
       <ul id="nav-mobile" class="right">
         <li><a href="#stats-modal" id="stats-btn">Stats/Sort</a></li>
@@ -59,13 +60,12 @@
           <th rowspan="2">Average</th>
           <th rowspan="2">Slowest</th>
           <th></th>
-          <!-- <th colspan='3'>Times</th> -->
         </tr>
-        <tr>
+        <tr id="dates">
           <th></th>
-          <th>Date</th>
-          <th>Date</th>
-          <th>Date</th>
+          <!-- <th data-date="9/1">9/1</th>
+          <th data-date="9/2">9/2</th>
+          <th data-date="9/3">9/3</th> -->
         </tr>
       </thead>
 
@@ -78,9 +78,10 @@
           <td>6:00</td>
           <td>8:00</td>
           <td><i class="add-time-btn material-icons">add_circle</i></td>
-          <td>4:50</td>
+          <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label><td>
+          <!-- <td>4:50</td>
           <td>6:00</td>
-          <td>8:00</td>
+          <td>8:00</td> -->
         </tr>
         <tr>
           <td class='first-name-data'>Andrew</td>
@@ -89,6 +90,7 @@
           <td>6:00</td>
           <td>8:00</td>
           <td><i class="add-time-btn material-icons">add_circle</i></td>
+          <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time (4:20)</label><td>
         </tr>
 
       </tbody>

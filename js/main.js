@@ -1,57 +1,65 @@
 $(function() {
   console.log("JS Linked");
   $('.modal').modal();
+  var runners = [];
 
   // Setting length of time header based on number of time entries
   var numTimes = 4;
   var $times = $("<th colspan=" + numTimes + ">Times</th>");
   $('#header-times').append($times);
 
+  // Dealing with the dates (got bored)
+  // let $dates = $('#dates');
+  // console.log($dates.children().length-1);
+
   // Triggering modal to add player
   $('#add-runner-btn').click(function() {
     $('#add-modal').modal('open');
   });
 
+  // Saving data and
   $('#add-runner').click(function(e) {
     e.preventDefault();
     var firstName = $('#first-name').val();
     var lastName = $('#last-name').val();
-    var newRunner;
+    var newRunner = new Runner(runners.length, firstName, lastName);
+    var $entry = newRunner.parseEntry();
+    runners.push(newRunner);
+    $('#runner-data').append($entry);
   });
 
-  //Add time listener
+  var x = 0;
+  $('#test-btn').click(function() {
+    switch(x) {
+      case 0:
+        runners[0].addTime(date1, time1);
+        break;
+      case 1:
+        runners[0].addTime(date2, time2);
+        break;
+      default:
+        console.log("done");
+    }
+    x++;
+  });
+
+  // Add time listener
   $('.add-time-btn').click(function(e){
     console.log("clicked");
     var $tablePerson = $(this).closest('tr')
-    $tablePerson.append($(`<td>2:00</td>`))
-  })
-
-  // Creating sample data and adding it to table
-  var $data3 = $(`
-    <tr>
-      <td class='first-name-data'>Andrew</td>
-      <td class='last-name-data'>Dorfman</td>
-      <td>4:50</td>
-      <td>6:00</td>
-      <td>8:00</td>
-      <td><i class="add-time-btn material-icons">add_circle</i></td>
-      <td>4:50</td>
-      <td>6:00</td>
-      <td>2:00</td>
-    </tr>
-  `);
-
-  $('#runner-data').append($data3);
+    $(`<td>2:00</td>`).insertAfter($tablePerson.find('.add-time-entry'));
+  });
 
 
+  [date1, time1] = normalize("9/20", "2:30");
+  [date2, time2] = normalize("9/21", "2:15");
 
+  // var runner = new Runner("Jon", "Doe");
+  // runners[0].addTime(date1, time1);
+  // runner.addTime(date2, time2);
 
-  [date, time] = normalize("9/20", "2:30");
-  var dateN = date[0] + "/" + date[1];
-  var timeN = time[0] + ":" + time[1];
-
-  var runner3 = new Runner("Jon", "Doe");
-  runner3.addTime(dateN, timeN);
+  // let $entry = runner.parseEntry();
+  // $('#runner-data').append($entry);
 
 
 
@@ -69,17 +77,7 @@ function normalize(date, time) {
     }
     var month = Number(m[1]);
     var day = Number(m[2]);
-    if (month < 10) {
-      month = "0" + month;
-    } else {
-      month = month.toString();
-    }
-    if (day < 10) {
-      day = "0" + day;
-    } else {
-      day = day.toString();
-    }
-    normalizedData.push([month, day]);
+    normalizedData.push(month + "/" + day);
   }
 
   var regexTime = /(.*):(.*)/g;
@@ -92,17 +90,7 @@ function normalize(date, time) {
     }
     var hour = Number(n[1]);
     var minute = Number(n[2]);
-    if (hour < 10) {
-      hour = "0" + hour;
-    } else {
-      hour = hour.toString();
-    }
-    if (minute < 10) {
-      minute = "0" + minute;
-    } else {
-      minute = minute.toString();
-    }
-    normalizedData.push([hour, minute]);
+    normalizedData.push(hour + ":" + minute);
   }
   return normalizedData;
 }
