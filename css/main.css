@@ -18,6 +18,6 @@
   right: 33px;
 }
 
-p{
-  font-size: 33px;
+.add-time-entry input{
+  width:50% !important;
 }

@@ -98,7 +98,6 @@ function normalize(date, time) {
 }
 
 function getDate() {
-  console.log("run");
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1; //January is 0!
