@@ -3,7 +3,7 @@ $(function() {
   $('.modal').modal();
 
   // Setting length of time header based on number of time entries
-  var numTimes = 3;
+  var numTimes = 4;
   var $times = $("<th colspan=" + numTimes + ">Times</th>");
   $('#header-times').append($times);
 
@@ -19,11 +19,18 @@ $(function() {
     var newRunner;
   });
 
+  //Add time listener
+  $('.add-time-btn').click(function(e){
+    console.log("clicked");
+    var $tablePerson = $(this).closest('tr')
+    $tablePerson.append($(`<td>2:00</td>`))
+  })
+
   // Creating sample data and adding it to table
   var $data3 = $(`
     <tr>
-      <td>Andrew</td>
-      <td>Dorfman</td>
+      <td class='first-name-data'>Andrew</td>
+      <td class='last-name-data'>Dorfman</td>
       <td>4:50</td>
       <td>6:00</td>
       <td>8:00</td>

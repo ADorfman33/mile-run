@@ -5,3 +5,8 @@ nav{
 .container{
   padding-top: 75px;
 }
+
+.add-time-btn{
+  cursor: pointer;
+  cursor: hand;
+}
