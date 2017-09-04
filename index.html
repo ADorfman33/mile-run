@@ -13,22 +13,27 @@
 
 <body>
   <!-- <div class="navbar-fixed"> -->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">Mile Run</a>
-        <ul id="nav-mobile" class="left">
-          <li><a href="#add-modal" id="add-runner-btn">Add Runner</a></li>
-          <li><a href="#" id="test-btn">test Button</a></li>
-        </ul>
-        <ul id="nav-mobile" class="right">
-          <li><a href="#stats-modal" id="stats-btn">Stats/Sort</a></li>
-        </ul>
-      </div>
-    </nav>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Mile Run</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#add-modal" class="add-runner-btn">Add Runner</a></li>
+        <li><a href="#" id="test-btn">test Button</a></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#stats-modal" id="stats-btn">Stats/Sort</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#add-modal" class="add-runner-btn">Add Runner</a></li>
+        <li><a href="#">Stats/Sort</a></li>
+      </ul>
+    </div>
+  </nav>
   <!-- </div> -->
 
   <div>
-    <a id="floating-add" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a id="floating-add" class="add-runner-btn btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
     <a id="floating-stats" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">show_chart</i></a>
   </div>
 
@@ -58,7 +63,7 @@
   </div>
 
   <div class="container">
-    <table class="highlight centered responsive-table">
+    <table class="highlight centered">
       <thead>
         <tr id="header-times">
           <th rowspan="2">First Name</th>

@@ -1,6 +1,7 @@
 $(function() {
   console.log("JS Linked");
   $('.modal').modal();
+  $(".button-collapse").sideNav();
   var runners = [];
 
   // Setting length of time header based on number of time entries
@@ -13,12 +14,10 @@ $(function() {
   // console.log($dates.children().length-1);
 
   // Triggering modal to add player
-  $('#add-runner-btn').click(function() {
+  $('.add-runner-btn').click(function() {
     $('#add-modal').modal('open');
   });
-  $('#floating-add').click(function() {
-    $('#add-modal').modal('open');
-  });
+
 
   // Saving data and
   $('#add-runner').click(function(e) {
