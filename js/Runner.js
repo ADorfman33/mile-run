@@ -5,7 +5,45 @@ class Runner {
     this.firstName = firstName || "";
     this.lastName = lastName || "";
     this.id = id;
-    this.times = {};
+    this.times = {'1':'10:00' , '2': '5:33' , '3': '2:55'};
+    this.calculation = {fastest:this.findFastest(), slowest:this.findSlowest() , average:this.findAvg()};
+  }
+
+  findFastest(){
+    let min = this.times['1']
+    let minNum = Number(min.split(':')[0])*60 + Number(min.split(':')[1])
+    for (let time in this.times){
+      let minute = Number(this.times[time].split(':')[0])
+      let sec = Number(this.times[time].split(':')[1])
+      let totalTime = minute*60 + sec
+      min = totalTime < minNum ? this.times[time] : min
+    }
+    return min
+  }
+  findSlowest(){
+    let max = this.times['1']
+    let maxNum = Number(max.split(':')[0])*60 + Number(max.split(':')[1])
+    for (let time in this.times){
+      let minute = Number(this.times[time].split(':')[0])
+      let sec = Number(this.times[time].split(':')[1])
+      let totalTime = minute*60 + sec
+      max = totalTime > maxNum ? this.times[time] : max
+    }
+    return max
+  }
+  findAvg(){
+    let total = 0
+    let len = 0;
+    for (let time in this.times){
+      let minute = Number(this.times[time].split(':')[0])
+      let sec = Number(this.times[time].split(':')[1])
+      let totalTime = minute*60 + sec
+      total += totalTime
+      len++;
+    }
+    let avgTime = total/len
+    let avgStr = `${Math.floor(avgTime/60)}:${Math.round(avgTime%60) < 10 ? '0' + Math.round(avgTime%60) : Math.round(avgTime%60)}`
+    return avgStr
   }
 
   addTime(date, time) {

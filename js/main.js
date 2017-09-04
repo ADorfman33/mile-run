@@ -11,7 +11,7 @@ $(function() {
     close: 'Ok',
     closeOnSelect: false // Close upon selecting a date,
   });
-  
+
   var runners = [];
 
   // Setting length of time header based on number of time entries
@@ -39,6 +39,7 @@ $(function() {
     var $entry = newRunner.parseEntry();
     runners.push(newRunner);
     $('#runner-data').append($entry);
+    console.log(runners);
   });
 
   var x = 0;
