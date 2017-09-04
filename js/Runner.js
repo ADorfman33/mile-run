@@ -10,7 +10,7 @@ class Runner {
   }
 
   findFastest(){
-    let min = this.times['1']
+    let min = this.times[Object.keys(this.times)[0]]
     let minNum = Number(min.split(':')[0])*60 + Number(min.split(':')[1])
     for (let time in this.times){
       let minute = Number(this.times[time].split(':')[0])
@@ -21,7 +21,7 @@ class Runner {
     return min
   }
   findSlowest(){
-    let max = this.times['1']
+    let max = this.times[Object.keys(this.times)[0]]
     let maxNum = Number(max.split(':')[0])*60 + Number(max.split(':')[1])
     for (let time in this.times){
       let minute = Number(this.times[time].split(':')[0])
