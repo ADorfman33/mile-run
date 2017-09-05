@@ -58,7 +58,7 @@ class Runner {
         <td class="calc-data">6:00</td>
         <td class="calc-data">8:00</td>
         <td><i class="add-time-btn material-icons">add_circle</i></td>
-        <td class="add-time-entry"><input type="text" class="validate"><label for="time"></label></td>
+        <td class="add-time-entry"><input type="text" class="validate"><label for="time">Time</label></td>
       </tr>
     `);
 
